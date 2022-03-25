@@ -1,41 +1,38 @@
 /* eslint-disable */
 import "./style.css";
 
-let generateExcuse = () => {
-  let pronoun = ["Un"];
-  let subject = ["runner", "perro", "payaso", "jigglypuff"];
-  let action = [
+let generadorExcusas = () => {
+  let pronombre = ["Un"];
+  let sujeto = ["runner", "perro", "payaso", "jigglypuff", "fantasma"];
+  let accion = [
     "me ha quitado",
     "se ha comido",
     "se ha llevado",
-    "se ha ido volando en mi"
+    "se ha ido volando en "
   ];
-  let possesion = ["portatil", "bicicleta", "cuaderno", "movil"];
-  let where = ["en el parque", "durante el partido", "en el instituto"];
+  let objeto = ["mi portatil", "la bicicleta", "el cuaderno", "tu movil"];
+  let lugar = ["en el parque", "durante el partido", "en el instituto"];
 
-  let pronounIndex = Math.floor(Math.random() * pronoun.length);
-  let subjectIndex = Math.floor(Math.random() * subject.length);
-  let actionIndex = Math.floor(Math.random() * action.length);
-  let possesionIndex = Math.floor(Math.random() * possesion.length);
-  let whereIndex = Math.floor(Math.random() * where.length);
+  let pronombreIndex = Math.floor(Math.random() * pronombre.length);
+  let sujetoIndex = Math.floor(Math.random() * sujeto.length);
+  let accionIndex = Math.floor(Math.random() * accion.length);
+  let objetoIndex = Math.floor(Math.random() * objeto.length);
+  let lugarIndex = Math.floor(Math.random() * lugar.length);
   return (
-    pronoun[pronounIndex] +
+    pronombre[pronombreIndex] +
     " " +
-    subject[subjectIndex] +
+    sujeto[sujetoIndex] +
     " " +
-    action[actionIndex] +
+    accion[accionIndex] +
     " " +
-    possesion[possesionIndex] +
+    objeto[objetoIndex] +
     " " +
-    where[whereIndex]
+    lugar[lugarIndex]
   );
 };
 
 window.onload = () => {
-  let randomNumber = Math.random() * 10;
   document.querySelector("#btn").addEventListener("click", () => {
-    document.querySelector("#excusa").innerHTML = generateExcuse();
+    document.querySelector("#excusa").innerHTML = generadorExcusas();
   });
-
-  console.log("Hello Rigo from the console!" + randomNumber);
 };
